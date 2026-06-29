@@ -1,10 +1,76 @@
 services:
+  helper:
+    build: ../cerevi-dc-helper
+    image: cerevi-helper:latest
+    container_name: cerevi_helper
+    environment:
+      DC_HELPER_ROOT: /data
+      DC_HELPER_LIST: "0"
+      DC_HELPER_SHARD_INDEX_CACHE: "${DC_HELPER_SHARD_INDEX_CACHE:-4096}"
+      LOG_LEVEL: "${LOG_LEVEL:-INFO}"
+    volumes:
+      - type: bind
+        source: ${CEREVI_DATA_ROOT:-/nsgm_njx_hdd/cerevi}
+        target: /data
+        read_only: true
+        bind:
+          create_host_path: false
+    # Exposed so a trusted laptop can use the datacenter helper directly.
+    # Restrict this port at the host firewall if the machine is reachable.
+    ports:
+      - "${DC_HELPER_HOST_PORT:-9000}:9000"
+    networks:
+      - cerevi_network
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import json, urllib.request; data=json.load(urllib.request.urlopen('http://localhost:9000/health', timeout=5)); raise SystemExit(0 if data.get('root_exists') else 1)",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  server:
+    build: ../cerevi-server/backend
+    image: cerevi-server:latest
+    container_name: cerevi_server
+    user: "${UID:-1000}:${GID:-1000}"
+    depends_on:
+      helper:
+        condition: service_healthy
+    environment:
+      DEBUG: "false"
+      METADATA_ROOT: /app/metadata
+      DC_HELPER_URL: http://helper:9000
+      LOG_LEVEL: "${LOG_LEVEL:-INFO}"
+      PROXY_TIMEOUT: "${PROXY_TIMEOUT:-300}"
+      PROXY_MAX_CONNECTIONS: "${PROXY_MAX_CONNECTIONS:-128}"
+      ZARR_METADATA_CACHE_TTL: "${ZARR_METADATA_CACHE_TTL:-300}"
+    volumes:
+      # Registry (specimens.json, atlases, etc.) is separate from upstream OME-Zarr trees.
+      - type: bind
+        source: ${CEREVI_REGISTRY_ROOT:-../cerevi-server/metadata}
+        target: /app/metadata
+        read_only: true
+        bind:
+          create_host_path: false
+    networks:
+      - cerevi_network
+    restart: unless-stopped
+
   web:
     build: ../cerevi-web
+    image: cerevi-web:latest
     container_name: cerevi_web
     environment:
       # Leave empty for same-origin API calls through nginx.
       VITE_API_BASE_URL: "${VITE_API_BASE_URL:-}"
+      VITE_API_PROXY_TARGET: "${VITE_API_PROXY_TARGET:-http://server:8000}"
     command: sh -c "bun run build && bun run preview --host 0.0.0.0 --port 5173"
     networks:
       - cerevi_network
@@ -12,10 +78,12 @@ services:
 
   validator:
     build: ../visor-image-validator
+    image: cerevi-validator:latest
     container_name: visor_image_validator
     environment:
       # Leave empty for same-origin API calls through nginx.
       VITE_API_BASE_URL: "${VALIDATOR_VITE_API_BASE_URL:-${VITE_API_BASE_URL:-}}"
+      VITE_API_PROXY_TARGET: "${VITE_API_PROXY_TARGET:-http://server:8000}"
     command: sh -c "pnpm run build && pnpm run preview --host 0.0.0.0 --port 5174"
     networks:
       - cerevi_network
@@ -24,6 +92,10 @@ services:
   nginx:
     container_name: cerevi_nginx
     image: nginx:alpine
+    depends_on:
+     - web
+     - validator
+     - server
     ports:
       - "${HTTPS_PORT:-8080}:443"
       - "${VALIDATOR_HTTPS_PORT:-8081}:444"
@@ -35,7 +107,7 @@ services:
         bind:
           create_host_path: false
       - type: bind
-        source: ./nginx_certs
+        source: ../nginx_certs
         target: /etc/nginx_certs
         read_only: true
         bind:
