@@ -1,0 +1,852 @@
+{
+  "RM009": {
+    "id": "RM009",
+    "name": "Rhesus Macaque Brain RM009",
+    "species": "Macaca mulatta",
+    "description": "High-resolution macaque brain imaging with VISoR technology",
+    "atlas_reference": "dMRI_CIVM",
+    "image": {
+      "recon_20251109": {
+        "description": "resample 1um whole brain 20251109 by ycy, mip 20251209 by xyy",
+        "RAS_coordinate": "Asr",
+        "files": [
+          "macaque_brain/RM009/VISoR/RM009.vsr/visor_recon_images/ycy_whole_brain_20251109.zarr",
+          "macaque_brain/RM009/VISoR/RM009.vsr/visor_projn_images/xyy_whole_brain_xy_20251209.zarr",
+          "macaque_brain/RM009/VISoR/RM009.vsr/visor_projn_images/xyy_whole_brain_xz_20251209.zarr",
+          "macaque_brain/RM009/VISoR/RM009.vsr/visor_projn_images/xyy_whole_brain_yz_20251209.zarr"
+        ],
+        "modes": {
+          "3d": [
+            [
+              0,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          ],
+          "xy": [
+            [
+              1,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          ],
+          "xz": [
+            [
+              2,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          ],
+          "yz": [
+            [
+              3,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          ]
+        },
+        "pixel_format": "uint16",
+        "physical_size_um": [
+          72300,
+          60000,
+          70000
+        ],
+        "origin_um": [
+          0,
+          0,
+          0
+        ],
+        "channels": [
+          {
+            "wavelength": "405",
+            "marker": "DAPI"
+          },
+          {
+            "wavelength": "488",
+            "marker": "AAV-eGFP"
+          },
+          {
+            "wavelength": "561",
+            "marker": "AAV-mCherry"
+          },
+          {
+            "wavelength": "640",
+            "marker": "Nissl"
+          }
+        ],
+        "resolutions_um_2d": [
+          [
+            20.0,
+            1.0
+          ],
+          [
+            20.0,
+            2.0
+          ],
+          [
+            20.0,
+            4.0
+          ],
+          [
+            20.0,
+            8.0
+          ],
+          [
+            20.0,
+            16.0
+          ],
+          [
+            20.0,
+            32.0
+          ],
+          [
+            20.0,
+            64.0
+          ],
+          [
+            20.0,
+            128.0
+          ]
+        ],
+        "axes_order": "ZYX",
+        "tile_size_2d": [
+          512,
+          512
+        ],
+        "tile_step_2d": 20,
+        "tile_thickness_2d": 20,
+        "tile_size_3d": [
+          64,
+          64,
+          64
+        ]
+      }
+    },
+    "region_mask": {
+      "V1": {
+        "description": "experimental label, data are not accurate",
+        "RAS_coordinate": "Asr",
+        "files": [
+          "macaque_brain/RM009/VISoR-ims/mask_v1.ims"
+        ],
+        "modes": {
+          "3d": [
+            [
+              0,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              [
+                0
+              ]
+            ]
+          ],
+          "xy": [
+            [
+              0,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              [
+                0
+              ]
+            ]
+          ],
+          "xz": [
+            [
+              0,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              [
+                0
+              ]
+            ]
+          ],
+          "yz": [
+            [
+              0,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              [
+                0
+              ]
+            ]
+          ]
+        },
+        "region_id_map": {
+          "0": "background",
+          "1": "V1-l1",
+          "2": "V1-l2",
+          "3": "V1-l3",
+          "4": "V1-l4",
+          "5": "V1-l5",
+          "6": "V1-l6"
+        }
+      }
+    },
+    "mesh": {
+      "v20260130": {
+        "description": "collection of 10um brain area mesh",
+        "RAS_coordinate": "Asr",
+        "downsample_factor": 10,
+        "files": [
+          "macaque_brain/RM009/VISoR/RM009.vsr/visor_mesh/brain_shell.obj"
+        ],
+        "modes": {
+          "3d": [
+            [
+              0,
+              [
+                0
+              ],
+              [
+                "brain_shell"
+              ]
+            ]
+          ],
+          "xy": [],
+          "xz": [],
+          "yz": []
+        }
+      }
+    }
+  },
+  "CM005": {
+    "id": "CM005",
+    "name": "Crab-eating Macaque Brain CM005",
+    "species": "Macaca fascicularis",
+    "description": "High-resolution macaque brain imaging with VISoR technology",
+    "atlas_reference": null,
+    "image": {
+      "recon_20260513": {
+        "description": "resample 1um whole brain 20260513 by lzc, mip 20260527 by yzj",
+        "RAS_coordinate": "Asr",
+        "files": [
+          "macaque_brain/CM005/VISoR/CM005.vsr/visor_recon_images/lzc_whole_brain_20260513.zarr",
+          "macaque_brain/CM005/VISoR/CM005.vsr/visor_projn_images/yzj_whole_brain_xy_20260527.zarr",
+          "macaque_brain/CM005/VISoR/CM005.vsr/visor_projn_images/yzj_whole_brain_xz_20260527.zarr",
+          "macaque_brain/CM005/VISoR/CM005.vsr/visor_projn_images/yzj_whole_brain_yz_20260527.zarr"
+        ],
+        "modes": {
+          "3d": [
+            [
+              0,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "xy": [
+            [
+              1,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "xz": [
+            [
+              2,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "yz": [
+            [
+              3,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ]
+        },
+        "pixel_format": "uint16",
+        "physical_size_um": [
+          67200,
+          50000,
+          60000
+        ],
+        "origin_um": [
+          0,
+          0,
+          0
+        ],
+        "channels": [
+          {
+            "wavelength": "405",
+            "marker": "DAPI"
+          },
+          {
+            "wavelength": "640",
+            "marker": "Nissl"
+          }
+        ],
+        "resolutions_um_2d": [
+          [
+            20.0,
+            1.0
+          ],
+          [
+            20.0,
+            2.0
+          ],
+          [
+            20.0,
+            4.0
+          ],
+          [
+            20.0,
+            8.0
+          ],
+          [
+            20.0,
+            16.0
+          ],
+          [
+            20.0,
+            32.0
+          ],
+          [
+            20.0,
+            64.0
+          ],
+          [
+            20.0,
+            128.0
+          ]
+        ],
+        "axes_order": "ZYX",
+        "tile_size_2d": [
+          512,
+          512
+        ],
+        "tile_step_2d": 20,
+        "tile_thickness_2d": 20,
+        "tile_size_3d": [
+          64,
+          64,
+          64
+        ]
+      }
+    },
+    "mesh": {
+      "v20260602": {
+        "description": "collection of 10um brain area mesh",
+        "RAS_coordinate": "Asr",
+        "downsample_factor": 160,
+        "files": [
+          "macaque_brain/CM005/VISoR/CM005.vsr/visor_mesh/brain_shell.obj"
+        ],
+        "modes": {
+          "3d": [
+            [
+              0,
+              [
+                0
+              ],
+              [
+                "brain_shell"
+              ]
+            ]
+          ],
+          "xy": [],
+          "xz": [],
+          "yz": []
+        }
+      }
+    }
+  },
+  "BB001": {
+    "id": "BB001",
+    "name": "Human Brain BB001",
+    "species": "Homo sapiens",
+    "description": "High-resolution human brain imaging with VISoR technology",
+    "atlas_reference": null,
+    "image": {
+      "recon_20260616": {
+        "description": "resample 1um half brain 20260616 by yzj, mip 20260616 by yzj",
+        "RAS_coordinate": "ARS",
+        "files": [
+          "human_brain/BB001/VISoR/BB001.vsr/visor_recon_images/yzj_half_brain_20260616.zarr",
+          "human_brain/BB001/VISoR/BB001.vsr/visor_projn_images/yzj_half_brain_xy_20260616.zarr",
+          "human_brain/BB001/VISoR/BB001.vsr/visor_projn_images/yzj_half_brain_xz_20260616.zarr",
+          "human_brain/BB001/VISoR/BB001.vsr/visor_projn_images/yzj_half_brain_yz_20260616.zarr"
+        ],
+        "modes": {
+          "3d": [
+            [
+              0,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "xy": [
+            [
+              1,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "xz": [
+            [
+              2,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "yz": [
+            [
+              3,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ]
+        },
+        "pixel_format": "uint16",
+        "physical_size_um": [
+          106500,
+          100000,
+          80000
+        ],
+        "origin_um": [
+          0,
+          0,
+          0
+        ],
+        "channels": [
+          {
+            "wavelength": "405",
+            "marker": "DAPI"
+          },
+          {
+            "wavelength": "640",
+            "marker": "Nissl"
+          }
+        ],
+        "resolutions_um_2d": [
+          [
+            20.0,
+            1.0
+          ],
+          [
+            20.0,
+            2.0
+          ],
+          [
+            20.0,
+            4.0
+          ],
+          [
+            20.0,
+            8.0
+          ],
+          [
+            20.0,
+            16.0
+          ],
+          [
+            20.0,
+            32.0
+          ],
+          [
+            20.0,
+            64.0
+          ],
+          [
+            20.0,
+            128.0
+          ],
+          [
+            20.0,
+            256.0
+          ]
+        ],
+        "axes_order": "ZYX",
+        "tile_size_2d": [
+          512,
+          512
+        ],
+        "tile_step_2d": 20,
+        "tile_thickness_2d": 20,
+        "tile_size_3d": [
+          64,
+          64,
+          64
+        ]
+      }
+    },
+    "mesh": {
+      "v20260602": {
+        "description": "collection of 10um brain area mesh",
+        "RAS_coordinate": "ARS",
+        "downsample_factor": 1,
+        "files": [
+          "human_brain/BB001/VISoR/BB001.vsr/visor_mesh/brain_shell.obj"
+        ],
+        "modes": {
+          "3d": [
+            [
+              0,
+              [
+                0
+              ],
+              [
+                "brain_shell"
+              ]
+            ]
+          ],
+          "xy": [],
+          "xz": [],
+          "yz": []
+        }
+      }
+    }
+  },
+  "MW001": {
+    "id": "MW001",
+    "name": "Mouse Body Thy1-EGFP-F MW001",
+    "species": "Mus musculus",
+    "description": "High-resolution mouse body imaging with VISoR technology",
+    "atlas_reference": null,
+    "image": {
+      "recon_20251209": {
+        "description": "resample 1um whole body 20251209 by ycy, mip 20260618 by yzj",
+        "RAS_coordinate": "AsR",
+        "files": [
+          "mouse_body/MW001/VISoR/MW001.vsr/visor_recon_images/ycy_whole_body_20251209.zarr",
+          "mouse_body/MW001/VISoR/MW001.vsr/visor_projn_images/yzj_whole_body_xy_20260618.zarr",
+          "mouse_body/MW001/VISoR/MW001.vsr/visor_projn_images/yzj_whole_body_xz_20260618.zarr",
+          "mouse_body/MW001/VISoR/MW001.vsr/visor_projn_images/yzj_whole_body_yz_20260618.zarr"
+        ],
+        "modes": {
+          "3d": [
+            [
+              0,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "xy": [
+            [
+              1,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "xz": [
+            [
+              2,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "yz": [
+            [
+              3,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ]
+        },
+        "pixel_format": "uint16",
+        "physical_size_um": [
+          76400,
+          30000,
+          36000
+        ],
+        "origin_um": [
+          0,
+          0,
+          0
+        ],
+        "channels": [
+          {
+            "wavelength": "488",
+            "marker": "Thy1-EGFP-F"
+          },
+          {
+            "wavelength": "647",
+            "marker": "LEL-Dylight649"
+          }
+        ],
+        "resolutions_um_2d": [
+          [
+            20.0,
+            1.0
+          ],
+          [
+            20.0,
+            2.0
+          ],
+          [
+            20.0,
+            4.0
+          ],
+          [
+            20.0,
+            8.0
+          ],
+          [
+            20.0,
+            16.0
+          ],
+          [
+            20.0,
+            32.0
+          ],
+          [
+            20.0,
+            64.0
+          ],
+          [
+            20.0,
+            128.0
+          ]
+        ],
+        "axes_order": "ZYX",
+        "tile_size_2d": [
+          512,
+          512
+        ],
+        "tile_step_2d": 20,
+        "tile_thickness_2d": 20,
+        "tile_size_3d": [
+          64,
+          64,
+          64
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "zarr_format": 3,
+  "node_type": "group",
+  "attributes": {
+    "ome": {
+      "version": "0.5",
+      "multiscales": [
+        {
+          "name": "yzj_whole_body_yz_20260618",
+          "axes": [
+            {
+              "name": "c",
+              "type": "channel"
+            },
+            {
+              "name": "z",
+              "type": "space",
+              "unit": "micrometer"
+            },
+            {
+              "name": "y",
+              "type": "space",
+              "unit": "micrometer"
+            },
+            {
+              "name": "x",
+              "type": "space",
+              "unit": "micrometer"
+            }
+          ],
+          "datasets": [
+            {
+              "path": "0",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    20.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "1",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    2.0,
+                    2.0,
+                    20.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "2",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    4.0,
+                    4.0,
+                    20.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "3",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    8.0,
+                    8.0,
+                    20.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "4",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    16.0,
+                    16.0,
+                    20.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "5",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    32.0,
+                    32.0,
+                    20.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "6",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    64.0,
+                    64.0,
+                    20.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "7",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    128.0,
+                    128.0,
+                    20.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "omero": {
+        "channels": [
+          {
+            "label": "Thy1-EGFP-F (488)",
+            "color": "00E5B8",
+            "window": {
+              "min": 0,
+              "max": 65535,
+              "start": 0,
+              "end": 6000
+            },
+            "active": true,
+            "family": "linear"
+          },
+          {
+            "label": "LEL-Dylight649 (647)",
+            "color": "FF4D4D",
+            "window": {
+              "min": 0,
+              "max": 65535,
+              "start": 0,
+              "end": 15000
+            },
+            "active": true,
+            "family": "linear"
+          }
+        ]
+      }
+    },
+    "visor": {
+      "channels": [
+        {
+          "wavelength": "488",
+          "marker": "Thy1-EGFP-F"
+        },
+        {
+          "wavelength": "647",
+          "marker": "LEL-Dylight649"
+        }
+      ],
+      "transform_version": "v1",
+      "pixel_format": "uint16",
+      "physical_size_um": [
+        76400,
+        30000,
+        36000
+      ],
+      "origin_um": [
+        0,
+        0,
+        0
+      ],
+      "axes_order": "ZYX",
+      "RAS_coordinate": "AsR",
+      "tile_size_2d": [
+        512,
+        512
+      ],
+      "tile_step_2d": 20,
+      "tile_thickness_2d": 20,
+      "tile_size_3d": [
+        64,
+        64,
+        64
+      ],
+      "encodings_2d": [
+        "fp16",
+        "textr",
+        "zstd_sqrt_v1"
+      ],
+      "encodings_3d": [
+        "fp16",
+        "h265"
+      ],
+      "description": "resample 1um whole body 20251209 by ycy, mip yz 20260618 by yzj",
+      "source_variant": "recon_20251209"
+    }
+  }
+}

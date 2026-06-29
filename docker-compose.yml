@@ -1,0 +1,55 @@
+services:
+  web:
+    build: ../cerevi-web
+    container_name: cerevi_web
+    environment:
+      # Leave empty for same-origin API calls through nginx.
+      VITE_API_BASE_URL: "${VITE_API_BASE_URL:-}"
+    command: sh -c "bun run build && bun run preview --host 0.0.0.0 --port 5173"
+    networks:
+      - cerevi_network
+    restart: unless-stopped
+
+  validator:
+    build: ../visor-image-validator
+    container_name: visor_image_validator
+    environment:
+      # Leave empty for same-origin API calls through nginx.
+      VITE_API_BASE_URL: "${VALIDATOR_VITE_API_BASE_URL:-${VITE_API_BASE_URL:-}}"
+    command: sh -c "pnpm run build && pnpm run preview --host 0.0.0.0 --port 5174"
+    networks:
+      - cerevi_network
+    restart: unless-stopped
+
+  nginx:
+    container_name: cerevi_nginx
+    image: nginx:alpine
+    ports:
+      - "${HTTPS_PORT:-8080}:443"
+      - "${VALIDATOR_HTTPS_PORT:-8081}:444"
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./nginx_certs
+        target: /etc/nginx_certs
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /nsgm_njx_hdd/cerevi
+        target: /mnt/data
+        read_only: true
+        bind:
+          create_host_path: false
+    networks:
+      - cerevi_network
+    restart: unless-stopped
+
+networks:
+  cerevi_network:
+    driver: bridge

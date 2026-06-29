@@ -1,0 +1,7 @@
+{
+  "Brain": {
+    "Frontal_Lobe (Frontal)": {
+      "lateral_prefrontal_cortex (lat_PFC)": "macaque_brain/RM009/CIVM/dMRI_atlas/regions/CHARM_50.obj"
+    }
+  }
+}
