@@ -1,0 +1,229 @@
+{
+  "zarr_format": 3,
+  "node_type": "group",
+  "attributes": {
+    "ome": {
+      "version": "0.5",
+      "multiscales": [
+        {
+          "name": "yzj_whole_brain_xy_20260701",
+          "axes": [
+            {
+              "name": "c",
+              "type": "channel"
+            },
+            {
+              "name": "z",
+              "type": "space",
+              "unit": "micrometer"
+            },
+            {
+              "name": "y",
+              "type": "space",
+              "unit": "micrometer"
+            },
+            {
+              "name": "x",
+              "type": "space",
+              "unit": "micrometer"
+            }
+          ],
+          "datasets": [
+            {
+              "path": "0",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    1.0,
+                    20.0,
+                    1.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "1",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    2.0,
+                    20.0,
+                    2.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "2",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    4.0,
+                    20.0,
+                    4.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "3",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    8.0,
+                    20.0,
+                    8.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "4",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    16.0,
+                    20.0,
+                    16.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "5",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    32.0,
+                    20.0,
+                    32.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "omero": {
+        "channels": [
+          {
+            "label": "DAPI (405)",
+            "color": "7B61FF",
+            "window": {
+              "min": 0,
+              "max": 65535,
+              "start": 0,
+              "end": 20000
+            },
+            "active": true,
+            "family": "linear"
+          },
+          {
+            "label": "Thy1-YFP (488)",
+            "color": "00E5B8",
+            "window": {
+              "min": 0,
+              "max": 65535,
+              "start": 0,
+              "end": 6000
+            },
+            "active": true,
+            "family": "linear"
+          },
+          {
+            "label": "Autofluorescence (561)",
+            "color": "FFB000",
+            "window": {
+              "min": 0,
+              "max": 65535,
+              "start": 0,
+              "end": 6000
+            },
+            "active": true,
+            "family": "linear"
+          },
+          {
+            "label": "NT640 (640)",
+            "color": "FF4D4D",
+            "window": {
+              "min": 0,
+              "max": 65535,
+              "start": 0,
+              "end": 30000
+            },
+            "active": true,
+            "family": "linear"
+          }
+        ]
+      }
+    },
+    "visor": {
+      "channels": [
+        {
+          "wavelength": "405",
+          "marker": "DAPI"
+        },
+        {
+          "wavelength": "488",
+          "marker": "Thy1-YFP"
+        },
+        {
+          "wavelength": "561",
+          "marker": "Autofluorescence"
+        },
+        {
+          "wavelength": "640",
+          "marker": "NT640"
+        }
+      ],
+      "transform_version": "v1",
+      "pixel_format": "uint16",
+      "physical_size_um": [
+        13500,
+        500,
+        14000
+      ],
+      "origin_um": [
+        0,
+        0,
+        0
+      ],
+      "axes_order": "ZYX",
+      "RAS_coordinate": "Asr",
+      "tile_size_2d": [
+        512,
+        512
+      ],
+      "tile_step_2d": 20,
+      "tile_thickness_2d": 20,
+      "tile_size_3d": [
+        64,
+        64,
+        64
+      ],
+      "encodings_2d": [
+        "fp16",
+        "textr",
+        "zstd_sqrt_v1"
+      ],
+      "encodings_3d": [
+        "fp16",
+        "h265"
+      ],
+      "description": "resample 1um whole brain 20260701 by yzj, mip xy 20260701 by yzj",
+      "source_variant": "recon_20260701"
+    }
+  }
+}

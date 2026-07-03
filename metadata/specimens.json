@@ -848,5 +848,171 @@
         ]
       }
     }
+  },
+  "M1779": {
+    "id": "M1779",
+    "name": "Mouse Brain Thy1-YFP M1779",
+    "species": "Mus musculus",
+    "description": "High-resolution mouse brain imaging with VISoR technology",
+    "atlas_reference": null,
+    "image": {
+      "recon_20260701": {
+        "description": "resample 1um whole brain 20260701 by yzj, mip 20260701 by yzj",
+        "RAS_coordinate": "AsR",
+        "files": [
+          "mouse_brain/M1779/VISoR/M1779.vsr/visor_recon_images/yzj_whole_brain_20260701.zarr",
+          "mouse_brain/M1779/VISoR/M1779.vsr/visor_projn_images/yzj_whole_brain_xy_20260701.zarr",
+          "mouse_brain/M1779/VISoR/M1779.vsr/visor_projn_images/yzj_whole_brain_xz_20260701.zarr",
+          "mouse_brain/M1779/VISoR/M1779.vsr/visor_projn_images/yzj_whole_brain_yz_20260701.zarr"
+        ],
+        "modes": {
+          "3d": [
+            [
+              0,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          ],
+          "xy": [
+            [
+              1,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          ],
+          "xz": [
+            [
+              2,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          ],
+          "yz": [
+            [
+              3,
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          ]
+        },
+        "pixel_format": "uint16",
+        "physical_size_um": [
+          13500,
+          10000,
+          14000
+        ],
+        "origin_um": [
+          0,
+          0,
+          0
+        ],
+        "channels": [
+          {
+            "wavelength": "405",
+            "marker": "DAPI"
+          },
+          {
+            "wavelength": "488",
+            "marker": "Thy1-YFP"
+          },
+          {
+            "wavelength": "561",
+            "marker": "Autofluorescence"
+          },
+          {
+            "wavelength": "640",
+            "marker": "NT640"
+          }
+        ],
+        "resolutions_um_2d": [
+          [
+            20.0,
+            1.0
+          ],
+          [
+            20.0,
+            2.0
+          ],
+          [
+            20.0,
+            4.0
+          ],
+          [
+            20.0,
+            8.0
+          ],
+          [
+            20.0,
+            16.0
+          ],
+          [
+            20.0,
+            32.0
+          ]
+        ],
+        "axes_order": "ZYX",
+        "tile_size_2d": [
+          512,
+          512
+        ],
+        "tile_step_2d": 20,
+        "tile_thickness_2d": 20,
+        "tile_size_3d": [
+          64,
+          64,
+          64
+        ]
+      }
+    }
   }
 }
