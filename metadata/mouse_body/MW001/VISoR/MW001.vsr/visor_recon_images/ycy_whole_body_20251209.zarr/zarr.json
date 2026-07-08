@@ -140,6 +140,34 @@
                   ]
                 }
               ]
+            },
+            {
+              "path": "8",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    256.0,
+                    256.0,
+                    256.0
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "9",
+              "coordinateTransformations": [
+                {
+                  "type": "scale",
+                  "scale": [
+                    1.0,
+                    512.0,
+                    512.0,
+                    512.0
+                  ]
+                }
+              ]
             }
           ]
         }
