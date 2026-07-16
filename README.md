@@ -16,8 +16,7 @@ With directory structure
 ├── cerevi-manager
 ├── cerevi-server
 ├── cerevi-web
-├── nginx_certs
-└── visor-image-validator
+└── nginx_certs
 ```
 run
 ```

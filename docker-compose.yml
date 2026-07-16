@@ -76,29 +76,14 @@ services:
       - cerevi_network
     restart: unless-stopped
 
-  validator:
-    build: ../visor-image-validator
-    image: cerevi-validator:latest
-    container_name: visor_image_validator
-    environment:
-      # Leave empty for same-origin API calls through nginx.
-      VITE_API_BASE_URL: "${VALIDATOR_VITE_API_BASE_URL:-${VITE_API_BASE_URL:-}}"
-      VITE_API_PROXY_TARGET: "${VITE_API_PROXY_TARGET:-http://server:8000}"
-    command: sh -c "pnpm run build && pnpm run preview --host 0.0.0.0 --port 5174"
-    networks:
-      - cerevi_network
-    restart: unless-stopped
-
   nginx:
     container_name: cerevi_nginx
     image: nginx:alpine
     depends_on:
      - web
-     - validator
      - server
     ports:
       - "${HTTPS_PORT:-8080}:443"
-      - "${VALIDATOR_HTTPS_PORT:-8081}:444"
     volumes:
       - type: bind
         source: ./nginx.conf
