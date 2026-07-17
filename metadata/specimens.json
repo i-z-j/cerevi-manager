@@ -8,7 +8,7 @@
     "image": {
       "recon_20251109": {
         "description": "resample 1um whole brain 20251109 by ycy, mip 20251209 by xyy",
-        "RAS_coordinate": "Asr",
+        "RAS_coordinate": "asr",
         "files": [
           "macaque_brain/RM009/VISoR/RM009.vsr/visor_recon_images/ycy_whole_brain_20251109.zarr",
           "macaque_brain/RM009/VISoR/RM009.vsr/visor_projn_images/xyy_whole_brain_xy_20251209.zarr",
@@ -183,7 +183,7 @@
     "region_mask": {
       "V1": {
         "description": "experimental label, data are not accurate",
-        "RAS_coordinate": "Asr",
+        "RAS_coordinate": "asr",
         "files": [
           "macaque_brain/RM009/VISoR-ims/mask_v1.ims"
         ],
@@ -267,7 +267,7 @@
     "mesh": {
       "v20260130": {
         "description": "collection of 10um brain area mesh",
-        "RAS_coordinate": "Asr",
+        "RAS_coordinate": "asr",
         "downsample_factor": 10,
         "files": [
           "macaque_brain/RM009/VISoR/RM009.vsr/visor_mesh/brain_shell.obj"
@@ -300,7 +300,7 @@
     "image": {
       "recon_20260513": {
         "description": "resample 1um whole brain 20260513 by lzc, mip 20260527 by yzj",
-        "RAS_coordinate": "Asr",
+        "RAS_coordinate": "asR",
         "files": [
           "macaque_brain/CM005/VISoR/CM005.vsr/visor_recon_images/lzc_whole_brain_20260513.zarr",
           "macaque_brain/CM005/VISoR/CM005.vsr/visor_projn_images/yzj_whole_brain_xy_20260527.zarr",
@@ -459,7 +459,7 @@
     "mesh": {
       "v20260602": {
         "description": "collection of 10um brain area mesh",
-        "RAS_coordinate": "Asr",
+        "RAS_coordinate": "asR",
         "downsample_factor": 160,
         "files": [
           "macaque_brain/CM005/VISoR/CM005.vsr/visor_mesh/brain_shell.obj"
@@ -858,7 +858,7 @@
     "image": {
       "recon_20260701": {
         "description": "resample 1um whole brain 20260701 by yzj, mip 20260701 by yzj",
-        "RAS_coordinate": "AsR",
+        "RAS_coordinate": "asr",
         "files": [
           "mouse_brain/M1779/VISoR/M1779.vsr/visor_recon_images/yzj_whole_brain_20260701.zarr",
           "mouse_brain/M1779/VISoR/M1779.vsr/visor_projn_images/yzj_whole_brain_xy_20260701.zarr",
