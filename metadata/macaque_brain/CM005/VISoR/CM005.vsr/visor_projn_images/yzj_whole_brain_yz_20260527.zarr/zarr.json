@@ -153,7 +153,7 @@
               "min": 0,
               "max": 65535,
               "start": 0,
-              "end": 6000
+              "end": 800
             },
             "active": true,
             "family": "linear"
@@ -165,7 +165,7 @@
               "min": 0,
               "max": 65535,
               "start": 0,
-              "end": 50000
+              "end": 2000
             },
             "active": true,
             "family": "linear"

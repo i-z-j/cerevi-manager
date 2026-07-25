@@ -177,7 +177,7 @@
               "min": 0,
               "max": 65535,
               "start": 0,
-              "end": 4000
+              "end": 5000
             },
             "active": true,
             "family": "linear"
