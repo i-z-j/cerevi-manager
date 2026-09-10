@@ -15,13 +15,15 @@ With directory structure
 ├── cerevi-dc-helper
 ├── cerevi-manager
 ├── cerevi-server
-├── cerevi-web
-└── nginx_certs
+└── cerevi-web
 ```
 run
 ```
 sudo docker compose up -d
 ```
+The ISP terminates TLS and forwards HTTP traffic to port `8080` by default. Set
+`HTTP_PORT` to publish a different host port.
+
 if code changes, run with rebuild
 ```
 sudo docker compose up -d --build
