@@ -134,7 +134,7 @@
         "channels": [
           {
             "label": "DAPI (405)",
-            "color": "7B61FF",
+            "color": "8FA8FF",
             "window": {
               "min": 0,
               "max": 65535,
@@ -146,7 +146,7 @@
           },
           {
             "label": "Nissl (640)",
-            "color": "FF4D4D",
+            "color": "FF7777",
             "window": {
               "min": 0,
               "max": 65535,
